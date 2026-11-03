@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A timed JavaScript quiz app with multiple-choice questions and a score summary.">
+  <title>QuickCheck | Quiz App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/quiz.js" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="QuickCheck home">
+        <span class="brand-symbol">q<span>.</span></span>
+        <span>quickcheck</span>
+      </a>
+      <span class="header-note">A LITTLE TEST OF WHAT YOU KNOW</span>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow">THE DAILY BRAIN BREAK</p>
+      <h1>Think it.<br><span>Pick it.</span> Know it.</h1>
+      <p class="intro-copy">Five questions. A ticking clock. See how much you know.</p>
+    </section>
+
+    <section class="quiz-card" aria-label="Quiz application">
+      <div class="quiz-top">
+        <div class="quiz-topic">
+          <span class="topic-mark">JS</span>
+          <div>
+            <p class="eyebrow">QUICK QUIZ</p>
+            <h2>JavaScript basics</h2>
+          </div>
+        </div>
+        <div class="timer" id="timerBox">
+          <span class="timer-icon">◷</span>
+          <span id="timerText">00:20</span>
+        </div>
+      </div>
+
+      <div id="quizView">
+        <div class="progress-row">
+          <span id="questionCounter">QUESTION 01 / 05</span>
+          <span id="answeredCounter">0 answered</span>
+        </div>
+        <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+        <div class="question-area">
+          <p class="question-label">YOUR QUESTION</p>
+          <h3 id="questionText">Loading question...</h3>
+          <div class="answer-list" id="answerList"></div>
+          <p class="feedback" id="feedback" aria-live="polite"></p>
+        </div>
+
+        <div class="quiz-actions">
+          <span class="keyboard-hint">Choose one answer to continue</span>
+          <button class="next-btn" id="nextBtn" type="button" disabled>Next question <span>→</span></button>
+        </div>
+      </div>
+
+      <section class="result-view" id="resultView" hidden aria-live="polite">
+        <div class="result-stamp" id="resultStamp">✓</div>
+        <p class="eyebrow">THAT'S A WRAP</p>
+        <h2 id="resultHeading">Nice work.</h2>
+        <p class="result-copy" id="resultCopy">Here is how you did.</p>
+        <div class="score-board">
+          <div><strong id="finalScore">0/5</strong><span>YOUR SCORE</span></div>
+          <div><strong id="accuracy">0%</strong><span>ACCURACY</span></div>
+          <div><strong id="correctAnswers">0</strong><span>CORRECT</span></div>
+        </div>
+        <div class="result-message" id="resultMessage"></div>
+        <button class="restart-btn" id="restartBtn" type="button">Try again <span>↻</span></button>
+      </section>
+    </section>
+
+    <footer class="page-footer">
+      <span>TAKE YOUR TIME. TRUST YOUR THINKING.</span>
+      <span>NO. <b>01</b> / QUICKCHECK</span>
+    </footer>
+  </main>
+</body>
+</html>
